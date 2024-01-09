@@ -19,3 +19,14 @@ if(MICROPY_BOARD_VARIANT STREQUAL "SPIRAM_OCT")
         MICROPY_HW_BOARD_NAME="Generic ESP32S3 module with Octal-SPIRAM"
     )
 endif()
+
+if(MICROPY_BOARD_VARIANT STREQUAL "FOUR_MB_FLASH")
+    set(SDKCONFIG_DEFAULTS
+        ${SDKCONFIG_DEFAULTS}
+        boards/sdkconfig.four_mb_flash
+    )
+
+    list(APPEND MICROPY_DEF_BOARD
+        MICROPY_HW_BOARD_NAME="Generic ESP32S3 module with 4MiB of flash"
+    )
+endif()
